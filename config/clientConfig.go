@@ -24,7 +24,7 @@ func (c *ClientConfig) initKubeConfig() {
 		kubeconfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	}
 
-	flag.Parse()
+	//flag.Parse()
 	c.Kubeconfig = kubeconfig
 }
 
