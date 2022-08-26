@@ -46,8 +46,8 @@ func (c *ClientConfig) NewClientSet(config *rest.Config) *kubernetes.Clientset {
 	return clientset
 }
 
-func (c *ClientConfig) NewExtendedClient(config *rest.Config) (kube.ExtendedClient, error) {
+func (c *ClientConfig) NewExtendedClient(config *rest.Config) (kube.CLIClient, error) {
 	c.initKubeConfig()
-	cc, err := kube.NewExtendedClient(kube.BuildClientCmd(*c.Kubeconfig, ""), "")
+	cc, err := kube.NewCLIClient(kube.BuildClientCmd(*c.Kubeconfig, ""), "")
 	return cc, err
 }
